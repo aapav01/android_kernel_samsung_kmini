@@ -32,9 +32,7 @@
     defined(CONFIG_SEC_MATISSE_PROJECT) || \
     defined(CONFIG_SEC_DEGAS_PROJECT) || \
     defined (CONFIG_SEC_T8_PROJECT) || \
-    defined (CONFIG_SEC_T10_PROJECT) || \
-    defined (CONFIG_SEC_RUBENS_PROJECT)
-
+    defined (CONFIG_SEC_T10_PROJECT)
 #define BYTE_ADDR_DATA
 #elif defined(CONFIG_MACH_AFYONLTE_TMO) || \
      defined (CONFIG_MACH_AFYONLTE_CAN) || \

@@ -41,7 +41,7 @@
 
 #define ISPIF_TIMEOUT_SLEEP_US                1000
 #if defined(CONFIG_MACH_VICTORLTE_CTC) || defined(CONFIG_MACH_AFYONLTE_TMO) \
-	|| defined (CONFIG_MACH_AFYONLTE_MTR) || defined (CONFIG_MACH_AFYONLTE_CAN)
+	|| defined (CONFIG_MACH_AFYONLTE_MTR)
 #define ISPIF_TIMEOUT_ALL_US                1000000
 #else
 #define ISPIF_TIMEOUT_ALL_US                500000
@@ -100,8 +100,8 @@ static void msm_ispif_io_dump_start_reg(struct ispif_device *ispif)
 static inline int msm_ispif_is_intf_valid(uint32_t csid_version,
 	uint8_t intf_type)
 {
-	return ((csid_version <= CSID_VERSION_V2 && intf_type != VFE0) ||
-		(intf_type >= VFE_MAX)) ? false : true;
+	return (csid_version <= CSID_VERSION_V2 && intf_type != VFE0) ?
+		false : true;
 }
 
 static struct msm_cam_clk_info ispif_8974_ahb_clk_info[] = {
